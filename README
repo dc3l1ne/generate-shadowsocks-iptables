@@ -1,2 +1,2 @@
-#generate-shadowsocks-iptables
+#generate-shadowsocks-iptables#
 This script can generate an iptables for shadowsocks which use the newest ip data from apnic 
