@@ -52,7 +52,7 @@ class Main:
 		f.write('iptables -t nat -A SHADOWSOCKS -d 192.168.0.0/16 -j RETURN\n')
 		f.write('iptables -t nat -A SHADOWSOCKS -d 224.0.0.0/4 -j RETURN\n')
 		f.write('iptables -t nat -A SHADOWSOCKS -d 240.0.0.0/4 -j RETURN\n')
-		f.write("iptables -t nat -A SHADOWSOCKS -d ss'server ip -j RETURN\n")
+		f.write("iptables -t nat -A SHADOWSOCKS -d ss'server -j RETURN\n")
 		for data in self.results:
 			f.write('iptables -t nat -A SHADOWSOCKS -d %s -j RETURN\n'%data)
 		f.write('iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT --to-ports %d\n'%self.port)
