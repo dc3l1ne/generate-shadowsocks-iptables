@@ -55,9 +55,9 @@ class Main:
 		f.write("iptables -t nat -A SHADOWSOCKS -d ss'server -j RETURN\n")
 		for data in self.results:
 			f.write('iptables -t nat -A SHADOWSOCKS -d %s -j RETURN\n'%data)
-		f.write('iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT --to-ports %d\n'%self.port)
-		f.write('iptables -t nat -A PREROUTING -p tcp -j SHADOWSOCKS')
-		f.close()
+			f.write('iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT --to-ports %d\n'%self.port)
+			f.write('iptables -t nat -A PREROUTING -p tcp -j SHADOWSOCKS')
+			f.close()
 		print 'All Done!'
 if __name__=='__main__':
 	run=Main()
